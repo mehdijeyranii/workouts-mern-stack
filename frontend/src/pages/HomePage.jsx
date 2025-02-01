@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import WorkoutDetails from "../components/WorkoutDetails";
+import WorkoutForm from "../components/WorkoutForm";
 
 const HomePage = () => {
   const [workouts, setWorkouts] = useState(null);
@@ -16,6 +17,7 @@ const HomePage = () => {
 
     fetchWorkouts();
   }, []);
+
   return (
     <div className="grid grid-cols-[3fr_1fr] gap-[100px]">
       <div className="workouts">
@@ -24,6 +26,7 @@ const HomePage = () => {
             <WorkoutDetails key={workout._id} workout={workout} />
           ))}
       </div>
+      <WorkoutForm />
     </div>
   );
 };
